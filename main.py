@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import converter as con
+import definitions as toplevel_def
 
 def converter():
     try:
@@ -23,7 +24,7 @@ def converter():
         print("From Fahrenheit to Celsius")
         degrees_converted = con.fahrenheit_to_celcius(degrees)
         print(degrees_converted)
-        label_result.config(text=f"Resultado: {degrees_converted} °C")
+        label_result.config(text=f"Result: {degrees_converted} °C")
 
 
 
@@ -32,7 +33,14 @@ window.title("Temperature converter")
 window.geometry("400x300")
 window.resizable(False, False)
 
-label_for_input_degrees = tk.Label(window, text="Ingrese grados a convertir", font=("Arial", 12))
+top_menu = tk.Menu(window)
+window.config(menu=top_menu)
+
+info_menu = tk.Menu(top_menu, tearoff=0)
+top_menu.add_cascade(label="Info", menu=info_menu)
+info_menu.add_command(label="Definitions", command=lambda: toplevel_def.toplevel_definitions(window))
+
+label_for_input_degrees = tk.Label(window, text="Write degrees", font=("Arial", 12))
 label_for_input_degrees.pack(padx=10, pady=10)
 
 input_degrees = tk.Entry(window, width=8, font=("Arial", 12))
@@ -44,16 +52,16 @@ frame_selection.pack()
 combobox_convert_from = ttk.Combobox(frame_selection, state="readonly")
 combobox_convert_from.pack(side="left", padx=5)
 
-elements_combobox_convert_from = ["Convertir de Celcius (°C)", "Convertir de Fahrenheit (°F)"]
+elements_combobox_convert_from = ["Convert from Celcius (°C)", "Convert from Fahrenheit (°F)"]
 combobox_convert_from["values"] = elements_combobox_convert_from
 
 combobox_convert_to = ttk.Combobox(frame_selection, state="readonly")
 combobox_convert_to.pack(side="left", padx=5)
 
-elements_combobox_convert_to = ["Convertir a Celcius (°C)", "Convertir a Fahrenheit (°F)"]
+elements_combobox_convert_to = ["Convert to Celcius (°C)", "Convert to Fahrenheit (°F)"]
 combobox_convert_to["values"] = elements_combobox_convert_to
 
-button = tk.Button(window, text="Convertir")
+button = tk.Button(window, text="Convert")
 button.pack()
 button.config(command=converter)
 
