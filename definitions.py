@@ -7,10 +7,18 @@ def toplevel_definitions(window_parent):
     window_definitions.grab_set()
 
     content_definitions = tk.Text(window_definitions, wrap="word")
-    content_definitions.insert("1.0", """Celsius (°C)
+    content_definitions.insert("1.0", """
+Celsius (°C)
+                               
 A scale for measuring temperature in which 0° is the freezing point of water and 100° is the boiling point, under standard atmospheric pressure. It is the primary temperature scale used in most countries and for scientific purposes worldwide.
+
 ----
 Fahrenheit (°F)
-A temperature scale where the freezing point of water is 32° and the boiling point is 212°. These two points are exactly 180 degrees apart. This scale is primarily used for weather and everyday life in the United States and a few other territories.""")
+A temperature scale where the freezing point of water is 32° and the boiling point is 212°. These two points are exactly 180 degrees apart. This scale is primarily used for weather and everyday life in the United States and a few other territories.
+
+----
+Kelvin (K)
+The primary unit of temperature in the International System of Units (SI). It is an absolute scale starting at absolute zero (0 K), the point where all thermal motion ceases. One kelvin is equal in magnitude to one degree Celsius.              
+""")
     content_definitions.config(state="disabled")
     content_definitions.pack()
