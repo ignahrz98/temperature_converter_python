@@ -5,7 +5,7 @@ It's a graphic program written in Python for converting temperatures. Even, It h
 
 ## Screenshots
 
-![App Screenshot](https://github.com/user-attachments/assets/0b71d4b6-f404-4bcd-883e-f75cdef2358a)
+![App Screenshot](https://github.com/user-attachments/assets/155bab33-166d-43e4-8bd9-ccbdfc21d671)
 
 
 ## How to run
