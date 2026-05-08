@@ -16,29 +16,23 @@ def converter():
     print(f"{convert_from} a {convert_to}")
 
     if convert_from == 0 and convert_to == 1:
-        print("From Celsius to Fahrenheit")
-        degrees_converted = con.celcius_to_fahrenheit(degrees)
+        degrees_converted = con.celsius_to_fahrenheit(degrees)
         print(degrees_converted)
         label_result.config(text=f"Result: {degrees_converted} °F")
     elif convert_from == 0 and convert_to == 2:
-        print("From Celsius to Kelvin")
         degrees_converted = con.celsius_to_kelvin(degrees)
         label_result.config(text=f"Result: {degrees_converted} K")
     elif convert_from == 1 and convert_to == 0:
-        print("From Fahrenheit to Celsius")
-        degrees_converted = con.fahrenheit_to_celcius(degrees)
+        degrees_converted = con.fahrenheit_to_celsius(degrees)
         print(degrees_converted)
         label_result.config(text=f"Result: {degrees_converted} °C")
     elif convert_from == 1 and convert_to == 2:
-        print("Fahrenheit to Kelvin")
         degrees_converted = con.fahrenheit_to_kelvin(degrees)
         label_result.config(text=f"Result: {degrees_converted} K")
     elif convert_from == 2 and convert_to == 0:
-        print("From Kelvin to Celsius")
         degrees_converted = con.kelvin_to_celsius(degrees)
         label_result.config(text=f"Result: {degrees_converted} °C")
     elif convert_from == 2 and convert_to == 1:
-        print("From Kelvin to Fahrenheit")
         degrees_converted = con.kelvin_to_fahrenheit(degrees)
         label_result.config(text=f"Result: {degrees_converted} °F")
 
@@ -68,13 +62,13 @@ frame_selection.pack()
 combobox_convert_from = ttk.Combobox(frame_selection, state="readonly")
 combobox_convert_from.pack(side="left", padx=5)
 
-elements_combobox_convert_from = ["Convert from Celcius (°C)", "Convert from Fahrenheit (°F)", "Convert from Kelvin (K)"]
+elements_combobox_convert_from = ["Convert from Celsius (°C)", "Convert from Fahrenheit (°F)", "Convert from Kelvin (K)"]
 combobox_convert_from["values"] = elements_combobox_convert_from
 
 combobox_convert_to = ttk.Combobox(frame_selection, state="readonly")
 combobox_convert_to.pack(side="left", padx=5)
 
-elements_combobox_convert_to = ["Convert to Celcius (°C)", "Convert to Fahrenheit (°F)", "Convert to Kelvin (K)"]
+elements_combobox_convert_to = ["Convert to Celsius (°C)", "Convert to Fahrenheit (°F)", "Convert to Kelvin (K)"]
 combobox_convert_to["values"] = elements_combobox_convert_to
 
 button = tk.Button(window, text="Convert")
